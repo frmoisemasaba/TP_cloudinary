@@ -39,7 +39,7 @@ Le dépôt est destiné à [`frmoisemasaba/TP_cloudinary`](https://github.com/fr
 
 1. Ajoutez vos URL Cloudinary dans `app.js`.
 2. Envoyez les fichiers sur la branche `main`.
-3. Au premier déploiement, dans **Settings → Pages**, définissez la source sur **GitHub Actions** si elle n’est pas déjà configurée.
+3. Le workflow active automatiquement GitHub Pages et sélectionne GitHub Actions comme source de publication.
 4. Vérifiez l’exécution dans **Actions** puis ouvrez le site public une fois le workflow terminé.
 
 L’adresse Pages attendue pour ce dépôt est [https://frmoisemasaba.github.io/TP_cloudinary/](https://frmoisemasaba.github.io/TP_cloudinary/).
