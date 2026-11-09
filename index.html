@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f6f4ee">
+    <meta
+      name="description"
+      content="Une galerie photo personnelle hébergée sur Cloudinary. Parcourez les images et consultez leurs liens."
+    >
+    <title>Fragments — Galerie Cloudinary</title>
+    <link rel="preconnect" href="https://res.cloudinary.com">
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#galerie">Aller à la galerie</a>
+
+    <header class="site-header">
+      <a class="wordmark" href="#accueil" aria-label="Fragments, accueil">
+        <span class="wordmark__symbol" aria-hidden="true">F.</span>
+        <span>FRAGMENTS<span class="wordmark__period">.</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Navigation principale">
+        <a href="#galerie">La galerie</a>
+        <a href="#apropos">Le projet</a>
+        <a class="nav-cta" href="https://cloudinary.com/" target="_blank" rel="noreferrer">
+          Propulsé par Cloudinary <span aria-hidden="true">↗</span>
+        </a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="accueil" aria-labelledby="hero-title">
+        <div class="hero__copy">
+          <p class="eyebrow"><span class="eyebrow__dot"></span> PORTFOLIO PHOTOGRAPHIQUE · 2026</p>
+          <h1 id="hero-title">Des images,<br>des <span>histoires.</span></h1>
+          <p class="hero__description">
+            Quelques instants choisis, hébergés dans le cloud et réunis ici.
+            Prenez le temps de les découvrir.
+          </p>
+          <a class="button button--primary" href="#galerie">
+            Explorer la galerie <span class="button__arrow" aria-hidden="true">↘</span>
+          </a>
+        </div>
+        <div class="hero__aside" aria-label="Informations sur la collection">
+          <span class="hero__rule"></span>
+          <p>UNE COLLECTION<br>PERSONNELLE</p>
+          <span class="hero__counter"><span id="photo-count">05</span><span> / 05</span></span>
+          <p class="hero__aside-caption">Images hébergées<br>avec Cloudinary</p>
+        </div>
+        <a class="hero__scroll" href="#galerie">
+          <span class="hero__scroll-line" aria-hidden="true"></span>
+          DÉFILER POUR EXPLORER
+        </a>
+        <span class="hero__ornament" aria-hidden="true">01<br>—<br>05</span>
+      </section>
+
+      <section class="gallery-section" id="galerie" aria-labelledby="gallery-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">LE CARNET VISUEL</p>
+            <h2 id="gallery-title">La galerie<span class="heading-dot">.</span></h2>
+          </div>
+          <p class="section-heading__note">Chaque photo a son histoire.<br>Cliquez sur une image pour la découvrir.</p>
+        </div>
+
+        <div class="gallery-toolbar">
+          <p id="gallery-status" role="status" aria-live="polite"></p>
+          <label class="search">
+            <span class="search__icon" aria-hidden="true">⌕</span>
+            <span class="sr-only">Rechercher une photo</span>
+            <input id="gallery-search" type="search" placeholder="Rechercher une image…" autocomplete="off">
+            <kbd>/</kbd>
+          </label>
+        </div>
+
+        <div class="gallery-grid" id="gallery-grid" aria-live="polite"></div>
+        <p class="gallery-empty" id="gallery-empty" hidden>
+          Aucun résultat. Essayez un autre mot-clé.
+        </p>
+      </section>
+
+      <section class="about-section" id="apropos" aria-labelledby="about-title">
+        <div class="about-section__index">À PROPOS <span>— 01</span></div>
+        <div class="about-section__content">
+          <p class="eyebrow">UNE GALERIE, UN APPRENTISSAGE</p>
+          <h2 id="about-title">Le cloud au service<br>des <span>souvenirs.</span></h2>
+          <p class="about-section__description">
+            Ce projet met en pratique l’hébergement et la diffusion d’images
+            avec Cloudinary. Chaque photo publique peut être consultée depuis
+            n’importe quel appareil, sans alourdir le site avec des fichiers
+            stockés sur son serveur.
+          </p>
+          <a class="text-link" href="https://cloudinary.com/documentation/image_transformations" target="_blank" rel="noreferrer">
+            Découvrir Cloudinary <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+        <div class="about-card">
+          <span class="about-card__number">05</span>
+          <span class="about-card__label">IMAGES DANS<br>LA COLLECTION</span>
+          <span class="about-card__divider"></span>
+          <span class="about-card__caption">Servies par<br>Cloudinary CDN</span>
+        </div>
+      </section>
+
+      <section class="closing-note" aria-label="Invitation">
+        <p>UN CLIC SUFFIT.</p>
+        <p>Une photo vous plaît ? Ouvrez-la pour copier son adresse ou la télécharger.</p>
+        <a href="#galerie" aria-label="Retourner à la galerie">↑</a>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="wordmark wordmark--footer" href="#accueil">
+        <span class="wordmark__symbol" aria-hidden="true">F.</span>
+        <span>FRAGMENTS<span class="wordmark__period">.</span></span>
+      </a>
+      <p>Un projet de cloud computing, réalisé avec soin.</p>
+      <a href="https://github.com/frmoisemasaba/TP_cloudinary" target="_blank" rel="noreferrer">
+        Voir le dépôt GitHub <span aria-hidden="true">↗</span>
+      </a>
+    </footer>
+
+    <dialog class="photo-dialog" id="photo-dialog" aria-labelledby="dialog-title">
+      <div class="photo-dialog__panel">
+        <div class="photo-dialog__topbar">
+          <span class="photo-dialog__eyebrow">DÉTAIL DE L’IMAGE</span>
+          <button class="icon-button" id="dialog-close" type="button" aria-label="Fermer">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="photo-dialog__image-frame" id="dialog-image-frame"></div>
+        <div class="photo-dialog__details">
+          <p class="photo-dialog__id" id="dialog-id"></p>
+          <h2 id="dialog-title"></h2>
+          <p class="photo-dialog__description" id="dialog-description"></p>
+          <div class="photo-dialog__url">
+            <span>URL PUBLIQUE</span>
+            <code id="dialog-url"></code>
+          </div>
+          <div class="photo-dialog__actions">
+            <button class="button button--primary" id="copy-url" type="button">
+              Copier l’URL <span aria-hidden="true">↗</span>
+            </button>
+            <button class="button button--secondary" id="download-image" type="button">
+              Télécharger <span aria-hidden="true">↓</span>
+            </button>
+          </div>
+          <p class="photo-dialog__feedback" id="dialog-feedback" role="status" aria-live="polite"></p>
+        </div>
+      </div>
+    </dialog>
+
+    <noscript>
+      <p class="noscript-message">Activez JavaScript dans votre navigateur pour explorer la galerie.</p>
+    </noscript>
+  </body>
+</html>
